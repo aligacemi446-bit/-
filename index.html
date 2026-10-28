@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080f20">
+  <meta name="description" content="صفحة حماية مستخدم مستقلة">
   <title>حماية مستخدم</title>
 
   <style>
@@ -15,13 +16,14 @@
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
       font-family: Arial, sans-serif;
       color: #f5f8ff;
       background:
-        radial-gradient(ellipse at top, #102c61, transparent 60%),
+        radial-gradient(ellipse at 50% 0%, #15366d 0%, transparent 58%),
         #070c18;
     }
 
@@ -31,19 +33,19 @@
       padding: 32px 25px;
       border: 1px solid #235fc1;
       border-radius: 22px;
-      background: #0b1427;
+      background: rgba(11, 20, 39, 0.97);
       box-shadow: 0 0 40px #086bff20;
     }
 
     .logo {
-      width: 66px;
-      height: 66px;
+      width: 68px;
+      height: 68px;
       display: grid;
       place-items: center;
       margin: 0 auto 20px;
-      color: #65a7ff;
       border: 1px solid #367ff0;
       border-radius: 20px;
+      color: #65a7ff;
       box-shadow: 0 0 25px #176aff35;
     }
 
@@ -54,14 +56,14 @@
     }
 
     .subtitle {
-      margin: 12px 0 28px;
+      margin: 13px 0 27px;
       color: #a8bbdf;
       text-align: center;
       line-height: 1.9;
       font-size: 14px;
     }
 
-    label {
+    label.field-label {
       display: block;
       margin: 18px 0 9px;
       font-size: 14px;
@@ -85,38 +87,46 @@
 
     .consent {
       display: flex;
-      gap: 10px;
       align-items: flex-start;
+      gap: 10px;
       margin: 20px 0;
       color: #a9b9d5;
       font-size: 12px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
     .consent input {
-      margin-top: 4px;
+      margin-top: 5px;
+      flex-shrink: 0;
       accent-color: #2785ff;
     }
 
     button {
       width: 100%;
       padding: 15px;
-      border: none;
+      border: 0;
       border-radius: 11px;
       background: linear-gradient(100deg, #087cff, #3565f6);
       color: white;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      transition: 0.2s;
     }
 
     button:hover {
       filter: brightness(1.12);
     }
 
+    button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
     .message {
-      min-height: 20px;
-      color: #9fc4ff;
+      min-height: 22px;
+      margin: 15px 0 0;
+      color: #a9caff;
       text-align: center;
       font-size: 13px;
       line-height: 1.8;
@@ -129,28 +139,38 @@
       color: #8298bd;
       text-align: center;
       font-size: 12px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
     .footer strong {
       color: #5d9eff;
+    }
+
+    a {
+      color: #76adff;
     }
   </style>
 </head>
 
 <body>
   <main class="card">
-    <div class="logo" aria-label="شعار الحماية">
-      <svg width="38" height="38" viewBox="0 0 40 40"
+    <div class="logo" aria-label="شعار الدرع">
+      <svg width="39" height="39" viewBox="0 0 40 40"
            fill="none" aria-hidden="true">
-        <path d="M20 3 L34 9 V19
-                 C34 27 28 33 20 37
-                 C12 33 6 27 6 19 V9 Z"
-              stroke="currentColor" stroke-width="2.5"
-              stroke-linejoin="round"/>
-        <path d="M13 20 L18 25 L28 14"
-              stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round"/>
+        <path
+          d="M20 3 L34 9 V19 C34 27 28 33 20 37
+             C12 33 6 27 6 19 V9 Z"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13 20 L18 25 L28 14"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     </div>
 
@@ -158,48 +178,116 @@
 
     <p class="subtitle">
       مرحباً بك<br>
-      ادخل emial و password instagram للتحقق
+      أدخل اسمك ولقبك للمتابعة
     </p>
 
     <form id="userForm">
-      <label for="firstName">email</label>
-      <input id="firstName" type="text"
-             maxlength="60" autocomplete="given-name"
-             placeholder="أدخل email" required>
+      <label class="field-label" for="firstName">الاسم</label>
+      <input
+        id="firstName"
+        name="first_name"
+        type="text"
+        maxlength="60"
+        autocomplete="given-name"
+        placeholder="أدخل اسمك"
+        required
+      >
 
-      <label for="lastName">password</label>
-      <input id="lastName" type="text"
-             maxlength="60" autocomplete="family-name"
-             placeholder="أدخل password" required>
+      <label class="field-label" for="lastName">اللقب</label>
+      <input
+        id="lastName"
+        name="last_name"
+        type="text"
+        maxlength="60"
+        autocomplete="family-name"
+        placeholder="أدخل لقبك"
+        required
+      >
 
       <label class="consent">
         <input id="consent" type="checkbox" required>
         <span>
-          أوافق على إرسال email و password إلى صاحب الموقع
-          وحفظهما وفق سياسة الخصوصية.
+          أوافق على إرسال اسمي ولقبي إلى صاحب هذا الموقع
+          وحفظهما في قاعدة بياناته. هذا موقع مستقل.
         </span>
       </label>
 
-      <button type="submit">متابعة ←</button>
+      <button id="submitButton" type="submit">
+        متابعة ←
+      </button>
 
-      <p id="message" class="message" role="status"></p>
+      <p id="message" class="message" role="status"
+         aria-live="polite"></p>
     </form>
 
     <footer class="footer">
       <strong>حماية مستخدم</strong>
       <br>
-      موقع مستقل غير تابع لشركة Meta.
+      موقع مستقل لحفظ بيانات التسجيل بموافقة المستخدم.
     </footer>
   </main>
 
   <script>
-    document.getElementById("userForm")
-      .addEventListener("submit", function(event) {
-        event.preventDefault();
+    // ضع معلومات مشروع Supabase هنا
+    const SUPABASE_URL = "https://huxaqeauovpucipjfnhh.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_tTl97pyXxVb1n5RGtJDLaw_rDHNkmac";
 
-        document.getElementById("message").textContent =
-          "سنفعّل التسجيل الآمن في الخطوة التالية.";
-      });
+    const form = document.getElementById("userForm");
+    const message = document.getElementById("message");
+    const button = document.getElementById("submitButton");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      if (
+        SUPABASE_URL.includes("ضع_") ||
+        SUPABASE_PUBLISHABLE_KEY.includes("ضع_")
+      ) {
+        message.textContent =
+          "لم يتم إعداد الاتصال بقاعدة البيانات بعد.";
+        return;
+      }
+
+      button.disabled = true;
+      message.textContent = "جارٍ إرسال التسجيل...";
+
+      try {
+        const response = await fetch(
+          `${SUPABASE_URL}/functions/v1/submit-user`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "apikey": SUPABASE_PUBLISHABLE_KEY,
+              "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+            },
+            body: JSON.stringify({
+              first_name: document.getElementById("firstName").value.trim(),
+              last_name: document.getElementById("lastName").value.trim(),
+              consent_given: document.getElementById("consent").checked
+            })
+          }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || result.success !== true) {
+          throw new Error(result.error || "تعذر إكمال التسجيل.");
+        }
+
+        message.textContent = "تم التسجيل بنجاح.";
+        form.reset();
+
+      } catch (error) {
+        console.error("Registration failed:", error);
+        message.textContent =
+          "تعذر التسجيل. تحقق من الاتصال وحاول مجددًا.";
+      } finally {
+        button.disabled = false;
+      }
+    });
   </script>
 </body>
 </html>
