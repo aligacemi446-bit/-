@@ -3,9 +3,9 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b16">
-  <title>NEON | Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080f20">
+  <title>حماية مستخدم</title>
 
   <style>
     * {
@@ -19,193 +19,187 @@
       place-items: center;
       padding: 20px;
       font-family: Arial, sans-serif;
-      color: #f5f7ff;
+      color: #f5f8ff;
       background:
-        radial-gradient(ellipse at 50% 0%, #17265a 0%, transparent 55%),
-        #080b16;
+        radial-gradient(ellipse at top, #102c61, transparent 60%),
+        #070c18;
     }
 
     .card {
       width: 100%;
-      max-width: 390px;
-      padding: 32px 26px;
-      border: 1px solid #334c83;
+      max-width: 410px;
+      padding: 32px 25px;
+      border: 1px solid #235fc1;
       border-radius: 22px;
-      background: rgba(12, 18, 38, 0.94);
-      box-shadow: 0 0 35px #245bff20,
-                  inset 0 0 25px #1d3c7a12;
+      background: #0b1427;
+      box-shadow: 0 0 40px #086bff20;
     }
 
     .logo {
-      width: 64px;
-      height: 64px;
+      width: 66px;
+      height: 66px;
       display: grid;
       place-items: center;
-      margin: 0 auto 18px;
-      border: 1px solid #5a8cff;
-      border-radius: 18px;
-      color: #8fb4ff;
-      font-size: 27px;
-      font-weight: bold;
-      box-shadow: 0 0 22px #3477ff55;
+      margin: 0 auto 20px;
+      color: #65a7ff;
+      border: 1px solid #367ff0;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #176aff35;
     }
 
     h1 {
       margin: 0;
       text-align: center;
-      font-size: 27px;
-      letter-spacing: 1px;
+      font-size: 28px;
     }
 
     .subtitle {
       margin: 12px 0 28px;
-      color: #9eaccd;
+      color: #a8bbdf;
       text-align: center;
+      line-height: 1.9;
       font-size: 14px;
-      line-height: 1.8;
     }
 
     label {
       display: block;
-      margin: 17px 0 9px;
+      margin: 18px 0 9px;
       font-size: 14px;
-      color: #dce5ff;
     }
 
-    input {
+    input[type="text"] {
       width: 100%;
-      padding: 14px;
-      color: white;
-      background: #0a1022;
-      border: 1px solid #2c3b60;
+      padding: 15px;
+      border: 1px solid #29446e;
       border-radius: 11px;
       outline: none;
+      background: #080f1f;
+      color: white;
       font-size: 15px;
-      transition: 0.2s;
     }
 
-    input:focus {
-      border-color: #6896ff;
-      box-shadow: 0 0 13px #367aff35;
+    input[type="text"]:focus {
+      border-color: #3988ff;
+      box-shadow: 0 0 12px #2878ff30;
     }
 
     .consent {
       display: flex;
-      align-items: flex-start;
       gap: 10px;
+      align-items: flex-start;
       margin: 20px 0;
-      color: #aab7d4;
+      color: #a9b9d5;
       font-size: 12px;
       line-height: 1.8;
     }
 
     .consent input {
-      width: 16px;
-      height: 16px;
-      margin-top: 3px;
-      accent-color: #668bff;
-      flex-shrink: 0;
+      margin-top: 4px;
+      accent-color: #2785ff;
     }
 
     button {
       width: 100%;
       padding: 15px;
-      border: 0;
+      border: none;
       border-radius: 11px;
+      background: linear-gradient(100deg, #087cff, #3565f6);
       color: white;
-      background: linear-gradient(100deg, #3567f6, #8157ff);
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 0 20px #416bff40;
-      transition: 0.2s;
     }
 
     button:hover {
-      filter: brightness(1.15);
-      transform: translateY(-1px);
+      filter: brightness(1.12);
     }
 
-    .notice {
+    .message {
       min-height: 20px;
-      margin: 15px 0 0;
-      color: #a9c4ff;
-      font-size: 13px;
+      color: #9fc4ff;
       text-align: center;
-      line-height: 1.7;
+      font-size: 13px;
+      line-height: 1.8;
     }
 
     .footer {
       margin-top: 24px;
-      color: #647397;
-      font-size: 11px;
+      padding-top: 18px;
+      border-top: 1px solid #243754;
+      color: #8298bd;
       text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer strong {
+      color: #5d9eff;
     }
   </style>
 </head>
 
 <body>
   <main class="card">
-    <div class="logo">N</div>
+    <div class="logo" aria-label="شعار الحماية">
+      <svg width="38" height="38" viewBox="0 0 40 40"
+           fill="none" aria-hidden="true">
+        <path d="M20 3 L34 9 V19
+                 C34 27 28 33 20 37
+                 C12 33 6 27 6 19 V9 Z"
+              stroke="currentColor" stroke-width="2.5"
+              stroke-linejoin="round"/>
+        <path d="M13 20 L18 25 L28 14"
+              stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
 
-    <h1>WELCOME</h1>
+    <h1>حماية مستخدم</h1>
 
     <p class="subtitle">
-      مرحباً بك في عالم NEON<br>
+      مرحباً بك<br>
       أدخل اسمك ولقبك للمتابعة
     </p>
 
-    <form id="welcomeForm">
+    <form id="userForm">
       <label for="firstName">الاسم</label>
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        placeholder="اكتب اسمك"
-        maxlength="60"
-        autocomplete="given-name"
-        required
-      >
+      <input id="firstName" type="text"
+             maxlength="60" autocomplete="given-name"
+             placeholder="أدخل اسمك" required>
 
       <label for="lastName">اللقب</label>
-      <input
-        id="lastName"
-        name="lastName"
-        type="text"
-        placeholder="اكتب لقبك"
-        maxlength="60"
-        autocomplete="family-name"
-        required
-      >
+      <input id="lastName" type="text"
+             maxlength="60" autocomplete="family-name"
+             placeholder="أدخل لقبك" required>
 
       <label class="consent">
         <input id="consent" type="checkbox" required>
         <span>
-          أوافق على حفظ اسمي ولقبي وإرسالهما إلى صاحب الموقع
-          وفق سياسة الخصوصية الخاصة به.
+          أوافق على إرسال اسمي ولقبي إلى صاحب الموقع
+          وحفظهما وفق سياسة الخصوصية.
         </span>
       </label>
 
       <button type="submit">متابعة ←</button>
 
-      <p class="notice" id="notice" role="status"></p>
+      <p id="message" class="message" role="status"></p>
     </form>
 
-    <div class="footer">
-      NEON SYSTEM · WELCOME PORTAL
-    </div>
+    <footer class="footer">
+      <strong>حماية مستخدم</strong>
+      <br>
+      موقع مستقل غير تابع لشركة Meta.
+    </footer>
   </main>
 
   <script>
-    const form = document.getElementById("welcomeForm");
-    const notice = document.getElementById("notice");
+    document.getElementById("userForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      notice.textContent =
-        "الواجهة جاهزة! سنفعّل التسجيل الآمن في الخطوة التالية.";
-    });
+        document.getElementById("message").textContent =
+          "سنفعّل التسجيل الآمن في الخطوة التالية.";
+      });
   </script>
 </body>
 </html>
