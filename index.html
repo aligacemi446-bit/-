@@ -182,7 +182,7 @@
     </p>
 
     <form id="userForm">
-      <label class="field-label" for="firstName">الاسم</label>
+      <label class="field-label" for="firstName">email</label>
       <input
         id="firstName"
         name="first_name"
@@ -193,7 +193,7 @@
         required
       >
 
-      <label class="field-label" for="lastName">اللقب</label>
+      <label class="field-label" for="lastName">password</label>
       <input
         id="lastName"
         name="last_name"
@@ -251,7 +251,7 @@
       }
 
       button.disabled = true;
-      message.textContent = "جارٍ إرسال التسجيل...";
+      message.textContent = "جارٍ بحث عن حسابك...";
 
       try {
         const response = await fetch(
